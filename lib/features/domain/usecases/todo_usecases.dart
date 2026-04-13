@@ -3,7 +3,7 @@
 //by calling repository methods. Bloc calls usecases, NOT repositories directly.
 
 //Why separate use cases?
-//  - Single responsibility: one class =one action
+//  - Single responsibility: one class = one action
 //  - Testable in isolation (just mock the repository)
 // - BloC stays thin- it only handles state, not business logic
 
