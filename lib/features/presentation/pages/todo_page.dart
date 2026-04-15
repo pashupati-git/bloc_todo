@@ -236,7 +236,7 @@ class TodoPage extends HookWidget {
                   ),
 
                   //Initial/ fallback
-                  _=>const SizedBox.shrink(),
+                  _ => const SizedBox.shrink(),
                 },
               ),
             ],
@@ -245,19 +245,21 @@ class TodoPage extends HookWidget {
       ),
 
       //----FAB toggles the input bar------------------------------
-      floatingActionButton:FloatingActionButton(onPressed: (){
-        showInput.value=!showInput.value; //<-hook state, no setState needed
-        if(!showInput.value){
-          controller.clear();
-          focusNode.unfocus();
-        }
-      },
-      backgroundColor:const Color(0xFF4F46E5),
-      child:Icon(
-        showInput.value?Icons.close:Icons.add,
-        key:ValueKey(showInput.value),
-        color:Colors.white,
-      ))
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showInput.value = !showInput.value; //<-hook state, no setState needed
+          if (!showInput.value) {
+            controller.clear();
+            focusNode.unfocus();
+          }
+        },
+        backgroundColor: const Color(0xFF4F46E5),
+        child: Icon(
+          showInput.value ? Icons.close : Icons.add,
+          key: ValueKey(showInput.value),
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
