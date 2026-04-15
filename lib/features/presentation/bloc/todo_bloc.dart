@@ -31,7 +31,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
     required this.toggleTodo,
     required this.deleteTodo,
   }) : super(const TodoInitial()) {
-    //Register one handler per event type
+    //Register one handler per event type.
     on<LoadTodosEvent>(_onloadTodos);
     on<AddTodoEvent>(_onAddTodo);
     on<ToggleTodoEvent>(_onToggleTodo);
