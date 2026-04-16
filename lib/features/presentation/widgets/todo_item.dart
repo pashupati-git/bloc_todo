@@ -6,6 +6,7 @@ import 'package:bloc_todo/features/domain/entities/todo.dart';
 import 'package:flutter/material.dart';
 
 class TodoItem extends StatelessWidget {
+  
   final Todo todo;
   final VoidCallback onToggle;
   final VoidCallback onDelete;
