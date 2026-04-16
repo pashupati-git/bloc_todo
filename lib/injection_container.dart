@@ -15,6 +15,8 @@ import 'package:get_it/get_it.dart';
 final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
+
+  
   //==========1.Data Sources===============================
   //registerLazySingleton: created once, reused everywhere (same instance)
   sl.registerLazySingleton<TodoLocalDataSource>(

@@ -7,7 +7,6 @@ import 'package:bloc_todo/features/presentation/bloc/todo_bloc.dart';
 import 'package:bloc_todo/features/presentation/pages/todo_page.dart';
 import 'package:bloc_todo/injection_container.dart' as di;
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
@@ -25,16 +24,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //di.sl<TodoBloc>() pulls the factory-registered BLoC from get_it
-    return BlocProvider(create: (_) => di.sl<TodoBloc>(),
-    child:MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme:ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor:const Color(0xFF4F46E5),),
-        useMaterial3: true,
-        fontFamily:'SF Pro Display',
+    return BlocProvider(
+      create: (_) => di.sl<TodoBloc>(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4F46E5)),
+          useMaterial3: true,
+          fontFamily: 'SF Pro Display',
+        ),
+        home: const TodoPage(),
       ),
-      home:const TodoPage(),
-    )
     );
   }
 }

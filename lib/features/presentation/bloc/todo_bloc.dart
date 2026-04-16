@@ -23,7 +23,6 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final ToggleTodo toggleTodo;
   final DeleteTodo deleteTodo;
   final _uuid = const Uuid();
- 
 
   TodoBloc({
     required this.getTodos,
@@ -36,16 +35,18 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
     on<AddTodoEvent>(_onAddTodo);
     on<ToggleTodoEvent>(_onToggleTodo);
     on<DeleteTodoEvent>(_onDeleteTodo);
-
   }
 
   //---Handlers--------------------------------------------------
 
-  Future<void> _onloadTodos(LoadTodosEvent event, Emitter<TodoState> emit) async {
-    emit(const TodoLoading());         //Tell UI: "I'm working"
+  Future<void> _onloadTodos(
+    LoadTodosEvent event,
+    Emitter<TodoState> emit,
+  ) async {
+    emit(const TodoLoading()); //Tell UI: "I'm working"
     try {
       final todos = await getTodos(NoParams());
-      emit(TodoLoaded(todos: todos));  //Tell UI: "Here's the data"
+      emit(TodoLoaded(todos: todos)); //Tell UI: "Here's the data"
     } catch (e) {
       emit(TodoError(message: e.toString())); //Tell UI: "Something broke"
     }
@@ -54,40 +55,45 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   Future<void> _onAddTodo(AddTodoEvent event, Emitter<TodoState> emit) async {
     //Build the new Todo entity right here in the Bloc
     final newTodo = Todo(
-      id: _uuid.v4(),                     //Generate unique ID
+      id: _uuid.v4(), //Generate unique ID
       title: event.title,
       isCompleted: false,
       createdAt: DateTime.now(),
     );
-    try{
+    try {
       await addTodo(AddTodoParams(todo: newTodo));
       //After successfull addition, reload the list to show the new todo
       final updatedTodos = await getTodos(NoParams());
       emit(TodoLoaded(todos: updatedTodos));
-    }catch(e){
+    } catch (e) {
       emit(TodoError(message: e.toString()));
     }
-
   }
 
-  Future<void> _onToggleTodo(ToggleTodoEvent event, Emitter<TodoState> emit) async {
-    try{
+  Future<void> _onToggleTodo(
+    ToggleTodoEvent event,
+    Emitter<TodoState> emit,
+  ) async {
+    try {
       await toggleTodo(ToggleTodoParams(id: event.id));
       //After successfull toggle, reload the list to show the updated todo
       final updatedTodos = await getTodos(NoParams());
       emit(TodoLoaded(todos: updatedTodos));
-    }catch(e){
+    } catch (e) {
       emit(TodoError(message: e.toString()));
     }
   }
 
-  Future<void> _onDeleteTodo(DeleteTodoEvent event, Emitter<TodoState> emit) async {
-    try{
+  Future<void> _onDeleteTodo(
+    DeleteTodoEvent event,
+    Emitter<TodoState> emit,
+  ) async {
+    try {
       await deleteTodo(DeleteTodoParams(id: event.id));
       //After successfull deletion, reload the list to show the updated todo
       final updatedTodos = await getTodos(NoParams());
       emit(TodoLoaded(todos: updatedTodos));
-    }catch(e){
+    } catch (e) {
       emit(TodoError(message: e.toString()));
     }
   }
