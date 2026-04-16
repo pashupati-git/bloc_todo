@@ -1,4 +1,4 @@
-//This page - Where Flutter Hooks+BloC come together.
+//This page - Where Flutter Hooks+BloC come together..
 //
 //Why Hookwidget instead of StatefulWidget?
 //StatefulWidgets needs:initState, dispose,setState,controller field.....
