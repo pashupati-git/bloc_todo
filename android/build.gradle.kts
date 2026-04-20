@@ -1,3 +1,5 @@
+@file:Suppress("DSL_SCOPE_VIOLATION", "UNRESOLVED_REFERENCE")
+
 allprojects {
     repositories {
         google()
