@@ -32,7 +32,7 @@ class TodoItem extends StatelessWidget {
       ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
         decoration: BoxDecoration(
           color: todo.isCompleted ? Colors.green.shade50 : Colors.white,
           borderRadius: BorderRadius.circular(12),
@@ -93,5 +93,5 @@ class TodoItem extends StatelessWidget {
 }
 
 String _formatDate(DateTime date) {
-  return '${date.day}/${date.month}/${date.year}  ${date.hour}:${date.minute.toString().padLeft(2,'0')}';
+  return '${date.day}/${date.month}/${date.year}  ${date.hour}:${date.minute.toString().padLeft(2, '0')}';
 }
