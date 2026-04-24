@@ -3,6 +3,7 @@
 //Using a sealed Either-like patterns: returns the result or a failure
 
 abstract class UseCase<T, Params> {
+  
   Future<T> call(Params params);
 }
 
