@@ -32,12 +32,6 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
   }
 
   @override
-/// The `toggleTodo` function toggles the completion status of a todo item in a list of todos after a
-/// delay of 100 milliseconds.
-/// 
-/// Args:
-///   id (String): The `id` parameter in the `toggleTodo` function is a unique identifier for the todo
-/// item that needs to be toggled (marked as completed or not completed).
   Future<void> toggleTodo(String id) async {
     await Future.delayed(const Duration(milliseconds: 100));
     final index = _todos.indexWhere((t) => t.id == id);
