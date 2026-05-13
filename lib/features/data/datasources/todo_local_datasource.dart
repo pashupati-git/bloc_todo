@@ -8,7 +8,7 @@ import 'package:bloc_todo/features/data/models/todo_model.dart';
 
 abstract class TodoLocalDataSource {
   Future<List<TodoModel>> getTodos();
-  Future<void> saveTodo(TodoModel todo);
+  Future<void> saveTodo(TodoModel todo);              
   Future<void> toggleTodo(String id);
   Future<void> deleteTodo(String id);
 }

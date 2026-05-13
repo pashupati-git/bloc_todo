@@ -9,7 +9,9 @@ import 'package:bloc_todo/features/domain/entities/todo.dart';
 
 abstract class TodoRepository {
   //Fetch all the todos from storage
-  Future<List<Todo>> getTodos();
+
+  Future<List<Todo>> getTodos(
+  );
 
   ///Persist a new todo
   Future<void> addTodo(Todo todo);
