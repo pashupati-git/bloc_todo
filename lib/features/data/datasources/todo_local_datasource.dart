@@ -5,6 +5,8 @@
 
 import 'package:bloc_todo/features/data/models/todo_model.dart';
 
+/// The `TodoLocalDataSource` class defines methods for interacting with local storage to manage todo
+/// items.
 abstract class TodoLocalDataSource {
   Future<List<TodoModel>> getTodos();
   Future<void> saveTodo(TodoModel todo);              
