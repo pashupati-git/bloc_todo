@@ -2,7 +2,6 @@
 //In a real app this could be sharedpreferences, sqlite,hive,etc.
 //here we use an in-memory list to keep the example dependency -free
 
-//The repository clls this. Bloc never touches this directly
 
 import 'package:bloc_todo/features/data/models/todo_model.dart';
 
@@ -31,6 +30,12 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
   }
 
   @override
+/// The `toggleTodo` function toggles the completion status of a todo item in a list of todos after a
+/// delay of 100 milliseconds.
+/// 
+/// Args:
+///   id (String): The `id` parameter in the `toggleTodo` function is a unique identifier for the todo
+/// item that needs to be toggled (marked as completed or not completed).
   Future<void> toggleTodo(String id) async {
     await Future.delayed(const Duration(milliseconds: 100));
     final index = _todos.indexWhere((t) => t.id == id);
@@ -47,6 +52,11 @@ class TodoLocalDataSourceImpl implements TodoLocalDataSource {
   }
 
   @override
+/// The `deleteTodo` function deletes a todo item with a specific ID after a delay of 100 milliseconds.
+/// 
+/// Args:
+///   id (String): The `id` parameter in the `deleteTodo` function is a unique identifier for the todo
+/// item that needs to be deleted.
   Future<void> deleteTodo(String id) async {
     await Future.delayed(const Duration(milliseconds: 100));
     _todos.removeWhere((t) => t.id == id);

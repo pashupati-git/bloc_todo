@@ -1,5 +1,7 @@
 import 'package:bloc_todo/features/domain/entities/todo.dart';
 
+/// The `TodoModel` class extends `Todo` and provides a factory method to convert raw JSON data into a
+/// `TodoModel` object.
 class TodoModel extends Todo {
   const TodoModel({
     required super.id,

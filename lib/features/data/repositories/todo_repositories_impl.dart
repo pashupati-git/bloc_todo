@@ -8,6 +8,12 @@
 import 'package:bloc_todo/features/data/datasources/todo_local_datasource.dart';
 import 'package:bloc_todo/features/data/models/todo_model.dart';
 import 'package:bloc_todo/features/domain/entities/todo.dart';
+/// The `import 'package:bloc_todo/features/domain/repositories/todo_repository.dart';` statement in the
+/// Dart code is importing the `TodoRepository` interface from the domain layer of the application. This
+/// interface defines the contract for interacting with todo-related data in the domain layer. The
+/// `TodoRepositoryImpl` class implements this interface, bridging the domain and data layers by
+/// providing concrete implementations for methods like `getTodos`, `addTodo`, `toggleTodo`, and
+/// `deleteTodo`.
 import 'package:bloc_todo/features/domain/repositories/todo_repository.dart';
 
 class TodoRepositoryImpl implements TodoRepository {
