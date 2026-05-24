@@ -22,9 +22,6 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final AddTodo addTodo;
   final ToggleTodo toggleTodo;
   final DeleteTodo deleteTodo;
-
-  /// reused throughout the lifecycle of the `TodoBloc` class. This instance of `Uuid` will be used to
-  /// generate unique identifiers for new todo items created within the `TodoBloc`.
   final _uuid = const Uuid();
 
   TodoBloc({
