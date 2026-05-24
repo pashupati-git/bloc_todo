@@ -22,9 +22,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final AddTodo addTodo;
   final ToggleTodo toggleTodo;
   final DeleteTodo deleteTodo;
-  
-  /// package and storing it in a private final variable `_uuid`. The `const` keyword is used to ensure
-  /// that the `Uuid` instance is a compile-time constant, meaning it will be initialized once and
+
   /// reused throughout the lifecycle of the `TodoBloc` class. This instance of `Uuid` will be used to
   /// generate unique identifiers for new todo items created within the `TodoBloc`.
   final _uuid = const Uuid();
