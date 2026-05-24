@@ -8,7 +8,7 @@
 import 'package:bloc_todo/features/domain/entities/todo.dart';
 import 'package:equatable/equatable.dart';
 
-abstract class TodoState extends Equatable {
+abstract class TodoState extends Equatable {   
   const TodoState();
 
   @override
