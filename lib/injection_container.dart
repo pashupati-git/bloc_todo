@@ -32,8 +32,6 @@ Future<void> initDependencies() async {
   );
 
   //==========3.Use Cases===============
-
-/// `ToggleTodo`, and `DeleteTodo` with the `GetIt` service locator (`sl`).
   sl.registerLazySingleton(() => GetTodos(sl()));
   sl.registerLazySingleton(() => AddTodo(sl()));
   sl.registerLazySingleton(() => ToggleTodo(sl()));
