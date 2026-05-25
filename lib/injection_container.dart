@@ -19,6 +19,8 @@ Future<void> initDependencies() async {
   
   //==========1.Data Sources===============================
   //registerLazySingleton: created once, reused everywhere (same instance)
+ /// This code snippet is registering a lazy singleton instance of `TodoLocalDataSourceImpl` class with
+ /// the `GetIt` service locator (`sl`).
   sl.registerLazySingleton<TodoLocalDataSource>(
     () => TodoLocalDataSourceImpl(),
   );
@@ -31,6 +33,8 @@ Future<void> initDependencies() async {
   );
 
   //==========3.Use Cases===============
+/// These lines of code are registering lazy singletons for the use case classes `GetTodos`, `AddTodo`,
+/// `ToggleTodo`, and `DeleteTodo` with the `GetIt` service locator (`sl`).
   sl.registerLazySingleton(() => GetTodos(sl()));
   sl.registerLazySingleton(() => AddTodo(sl()));
   sl.registerLazySingleton(() => ToggleTodo(sl()));

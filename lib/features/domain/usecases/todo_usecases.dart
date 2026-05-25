@@ -25,7 +25,7 @@ class GetTodos implements UseCase<List<Todo>, NoParams> {
 //------AddTodo-----------------------------------------------------------
 class AddTodo implements UseCase<void, AddTodoParams> {
   final TodoRepository repository;
-  AddTodo(this.repository);
+  AddTodo(this.repository); 
 
   @override
   Future<void> call(AddTodoParams params) {

@@ -51,7 +51,6 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       emit(TodoError(message: e.toString())); //Tell UI: "Something broke"
     }
   }
-
   Future<void> _onAddTodo(AddTodoEvent event, Emitter<TodoState> emit) async {
     //Build the new Todo entity right here in the Bloc
     final newTodo = Todo(
