@@ -24,6 +24,9 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final DeleteTodo deleteTodo;
   final _uuid = const Uuid();
 
+/// This code snippet is defining the constructor for the `TodoBloc` class. It takes four required
+/// parameters: `getTodos`, `addTodo`, `toggleTodo`, and `deleteTodo`, which are instances of classes
+/// responsible for handling different operations related to todos.
   TodoBloc({
     required this.getTodos,
     required this.addTodo,
