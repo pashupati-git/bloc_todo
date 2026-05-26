@@ -24,7 +24,6 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final DeleteTodo deleteTodo;
   final _uuid = const Uuid();
 
-/// parameters: `getTodos`, `addTodo`, `toggleTodo`, and `deleteTodo`, which are instances of classes
 /// responsible for handling different operations related to todos.
   TodoBloc({
     required this.getTodos,
