@@ -4,7 +4,6 @@
 //
 //Registration order matters: register dependencies before dependents
 // DataSource -> Repository -> UseCases ->BLoc
-/// The `initDependencies` function sets up dependency injection using GetIt for data sources,
 
 import 'package:bloc_todo/features/data/datasources/todo_local_datasource.dart';
 import 'package:bloc_todo/features/data/repositories/todo_repositories_impl.dart';
