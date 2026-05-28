@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //di.sl<TodoBloc>() pulls the factory-registered BLoC from get_it
     return BlocProvider(
+    /// In the provided Dart code snippet, the line `create: (_) => di.sl<TodoBloc>(),` is setting up
+    /// the creation of a `TodoBloc` instance using a dependency injection container.
       create: (_) => di.sl<TodoBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
